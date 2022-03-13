@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} 登录 {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<div class="main">
+    {% block main %}
+        <h3 class="page-title" align="center">超市商品信息表</h3>
+    <form>
+		<table border="1" cellpadding="5" cellspacing="0" width="100%" bgcolor="F2F2F2">
+			<tr id="tabRow">
+				<td colspan="3">
+					<strong><span class="title">商品信息表</strong>
+				</td>
+                <td></td>
+                <td></td>
+                <td></td>
+			</tr>
+
+            {% for product in products %}
+            <tr id="tabRow">
+                <td width="10%"><strong>名称: {{product.name}}</strong></td>
+                <td width="5%"><strong>编号: {{product.id}}</strong></td>
+                <td width="15%"><strong>单价: {{product.unit_price}}</strong></td>
+                <td width="15%"><strong>库存: {{product.number}}</strong></td>
+                <td width="15%"><strong>描述信息: {{product.description}}</strong></td>
+                <td width="20%"><strong>图像:<img src= "/Image/"+ {{product.name}} alt=""></strong></td>
+            </tr>
+            {% endfor %}
+		</table>
+	</form>
+    {% endblock %}
+</div>

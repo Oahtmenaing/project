@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} 登录 {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<div class="main">
+    {% block main %}
+    <h3 class="page-title" align="center">信息查询结果</h3>
+        <form>
+		<table border="1" cellpadding="5" cellspacing="0" width="100%" bgcolor="F2F2F2">
+			<tr id="tabRow">
+				<td colspan="3">
+					<strong><span class="title">商品信息查询结果</strong>
+				</td>
+			</tr>
+            {% for goods1 in goods1 %}
+            <tr id="tabRow">
+                <td width="20%"><strong>名称: {{goods1.title}}</strong></td>
+                <td width="20%"><strong>类型: {{goods1.type}}</strong></td>
+                <td width="20%"><strong>生产日期: {{goods1.produce_date}}</strong></td>
+                <td width="20%"><strong>保质期: {{goods1.guarantee_time}}</strong></td>
+                <td width="10%"><strong>价格: {{goods1.price}}</strong></td>
+                <td width="10%"><strong>数量: {{goods1.num}}</strong></td>
+            </tr>
+            {% endfor %}
+		</table>
+	</form>
+    {% endblock %}
+</div>

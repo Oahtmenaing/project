@@ -1,0 +1,16 @@
+.menu{
+    margin-left: 60px;
+}
+.form-container
+{
+    width:400px;
+    margin:0 auto;
+}
+.main
+{
+    background: #fff;
+    width:800px;
+    margin:0 auto;
+    overflow:hidden;
+    padding:10px;
+}

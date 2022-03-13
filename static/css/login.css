@@ -1,0 +1,32 @@
+.form-container
+{
+    width:300px;
+    margin:0 auto;
+}
+
+.page-title
+{
+    text-align: center;
+}
+
+.main
+{
+    background: #fff;
+    width:750px;
+    margin:0 auto;
+    overflow:hidden;
+    padding:10px;
+}
+
+.form_head{
+    font-width:bold;
+    font-size:40px;
+    text-align: center;
+    align: center;
+    margin: 0 auto;
+}
+
+.form-group{
+    font-size: 30px;
+    width: 40px;
+}

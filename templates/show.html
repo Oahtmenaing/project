@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} 登录 {% endblock %}
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<div class="main">
+    {% block main %}
+    <h3 class="page-title" align="center">商品信息表</h3>
+    <form>
+		<table border="1" cellpadding="5" cellspacing="0" width="100%" bgcolor="F2F2F2">
+
+<!--            {% for good in goods %}-->
+<!--            <tr id="tabRow">-->
+<!--                <td width="10%"><strong>商品名称: {{good.name}}</strong></td>-->
+<!--&lt;!&ndash;                <td width="5%"><strong>类型: {{good.type}}</strong></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td width="10%"><strong>生产日期: {{good.produce_date}}</strong></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td width="10%"><strong>保质期: {{good.guarantee_time}}</strong></td>&ndash;&gt;-->
+<!--                <td width="15%"><strong>价格: {{good.unit_price}}</strong></td>-->
+<!--                <td width="15%"><strong>剩余数量: {{good.number}}</strong></td>-->
+<!--                <td width="15%"><strong>商品描述: {{good.description}}</strong></td>-->
+<!--                <td width="15%"><strong>商品图片: {{good.image}}</strong></td>-->
+<!--            </tr>-->
+<!--            {% endfor %}-->
+            {% for product in products %}
+            <tr id="tabRow">
+                <td width="5%"><strong>名称: {{product.name}}</strong></td>
+                <td width="5%"><strong>编号: {{product.id}}</strong></td>
+                <td width="5%"><strong>单价: {{product.unit_price}}</strong></td>
+                <td width="5%"><strong>库存: {{product.number}}</strong></td>
+                <td width="5%"><strong>描述信息: {{product.description}}</strong></td>
+                <img class="logo" src="{{url_for('static',filename='images/{{product.image}}')}}" alt="">
+<!--                <td width="75%"> <strong>图像:<img src= "../../Image/{{product.image}}" height="450" width="650" ></strong></td>-->
+                <td width="75%"> <strong>图像:<img  href= "/Image/{{product.image}}" height="600" width="800" ></strong></td>
+            </tr>
+
+            {% endfor %}
+		</table>
+	</form>
+    {% endblock %}
+</div>

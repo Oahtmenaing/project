@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} 登录 {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+{% endblock %}
+<div class="main">
+    {% block main %}
+    <h3 class="page-title">添加商品信息</h3>
+    <from action="" method="POST">
+        <form method="post">
+            <tr> 请输入需要删除的商品的id:</tr>
+            {{ form.csrf_token }}
+            <div class="form-container">
+                {{ form.id.label }}
+                <p>{{form.id}}</p>
+
+
+
+                {{ form.submit }}
+            </div>
+        </form>
+        <hr/>
+    </from>
+    {% endblock %}
+</div>
+
+

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} 登录 {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+{% endblock %}
+<div class="main">
+    {% block main %}
+    <h3 class="page-title">用户信息表</h3>
+    <form>
+		<table border="1" cellpadding="5" cellspacing="0" width="100%" bgcolor="F2F2F2">
+			<tr id="tabRow">
+				<td colspan="3">
+					<strong><span class="form_head">超市会员信息名单</span></strong>
+				</td>
+			</tr>
+            {% for user in users %}
+			<tr id="tabRow">
+				<td width="20%"><strong>用户编号:  {{user.id}}</strong></td>
+                <td width="40%"><strong>用户名:  {{user.username}}</strong></td>
+                <td width="40%"><strong>手机号码:  {{user.telephone}}</strong></td>
+			</tr>
+            {% endfor %}
+		</table>
+	</form>
+    {% endblock %}
+</div>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} 首页 {% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/login.css')}}">
+{% endblock %}
+{% block main %}
+<form>
+    <h>
+        {{list}}
+    </h>
+</form>
+    <h4 class="h4"><strong>你好,尊敬的{{username}}管理员:</strong></h4>
+<h3 style="color green" class="menu">
+    <li><a href="{{url_for('show')}}">展示商品</a></li>
+    <li><a href="{{url_for('add')}}">添加商品信息</a></li>
+    <li><a href="{{url_for('modify')}}">修改商品信息</a></li>
+    <li><a href="{{url_for('delete')}}">删除商品信息</a></li>
+<!---->
+</h3>
+{% endblock %}
